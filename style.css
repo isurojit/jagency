@@ -1,49 +1,126 @@
-/* Custom Styles */
+/* General Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
 
-/* Ensure the form looks good on different devices */
 .container {
-  margin-top: 50px;
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  max-width: auto; /* Maintain original width */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Center the submit button */
-button[type="submit"] {
-  display: block;
-  margin: 20px auto;
+h4 {
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  text-align: center;
+  font-size: 1.75rem;
 }
 
-/* Style adjustments for the input fields */
-.input-field label {
-  font-size: 1.4rem; /* Increase font size */
-  font-weight: bold; /* Make font bold */
-  margin-bottom: 10px; /* Add space below labels */
-  display: inline-block;
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
 }
 
-.input-field label.required:after {
-  content: " *"; /* Add asterisk after required labels */
-  color: red; /* Asterisk color */
+.input-field {
+  margin-bottom: 1.5rem;
 }
 
-.input-field input[type="text"],
-.input-field input[type="email"],
-.input-field input[type="url"],
-.input-field input[type="tel"],
-.input-field input[type="radio"],
+.input-field input,
 .input-field select {
-  font-size: 1.2rem; /* Increase font size for inputs */
-  margin-top: 10px; /* Add space above input fields */
-  margin-bottom: 20px; /* Add space below input fields */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.75rem;
+  width: 100%; /* Maintain original width */
+  font-size: 1.1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Additional styling for radio buttons */
-.input-field p {
-  margin-top: 20px; /* Add space above radio button group */
+.input-field input:focus,
+.input-field select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-.input-field p label {
-  margin-right: 20px; /* Add space between radio options */
-  font-size: 1.2rem; /* Increase font size for radio labels */
-  font-weight: bold; /* Make radio labels bold */
+.input-field label {
+  color: #555;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.input-field label.required::after {
+  content: "*";
+  color: red;
+  margin-left: 0.5rem;
+}
+
+/* Button Styles */
+.btn {
+  background-color: #007bff;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 0rem 2rem !important;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.02);
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 600px) {
+  .input-field {
+    width: 100%; /* Maintain original width */
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Additional Styles */
+.row {
+  margin: 0;
+}
+
+.row .col {
+  padding: 0 0.5rem;
+}
+
+.row .col.s12 {
+  margin-bottom: 1.5rem;
+}
+
+.row .col.m6 {
+  margin-bottom: 1.5rem;
+}
+
+.pujatype .required {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+select {
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .pujatype {
