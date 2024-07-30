@@ -8,20 +8,32 @@ document.addEventListener("DOMContentLoaded", function () {
     this.value = this.value.toUpperCase();
   });
 
-  // Format BUDGET field
-  document.getElementById("budget").addEventListener("input", function () {
-    this.value = this.value.replace(/[^\d]/g, ""); // Remove non-digit characters
-    this.value = this.value
-      ? "₹" + this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-      : ""; // Add commas and rupee symbol
-  });
+  // Format BUDGET and LAST 3 YEARS BUDGET fields
+  function formatCurrency(inputId) {
+    document.getElementById(inputId).addEventListener("input", function () {
+      this.value = this.value.replace(/[^\d]/g, ""); // Remove non-digit characters
+      this.value = this.value
+        ? "₹" + this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        : ""; // Add commas and rupee symbol
+    });
+  }
 
-  // Function to validate phone numbers
+  formatCurrency("budget");
+  formatCurrency("last_3_years_budget");
+
+  // Add 'KW' suffix for electric consumption
+  document
+    .getElementById("electric_consumption")
+    .addEventListener("input", function () {
+      this.value = this.value.replace(/[^\d]/g, ""); // Remove non-digit characters
+      this.value = this.value ? this.value + " KW" : ""; // Add 'KW' suffix
+    });
+
+  // Validate that all phone numbers are 10 digits
   function validatePhoneNumber(value) {
     return /^\d{10}$/.test(value);
   }
 
-  // Validate that all phone numbers are 10 digits
   function validatePhoneNumbers() {
     const phoneIds = [
       "presidents_phone",

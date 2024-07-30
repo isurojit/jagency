@@ -216,7 +216,7 @@
                   value="Traditional"
                   required
                 />
-                <span>Traditional</span>
+                <span>Traditional (Barowari)</span>
               </label>
               <label>
                 <input name="puja_type" type="radio" value="Theme-based" />
@@ -245,12 +245,35 @@
           </div>
           <div class="input-field col s12 m6">
             <input
-              id="email"
+              id="youtube_link"
+              type="url"
+              placeholder="Enter Your Link. Write NA, If You Don't Have"
+            />
+            <label for="youtube_link">YOUTUBE ACCOUNT / PAGE LINK</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="main_email"
               type="email"
               placeholder="Enter Your Primary Mail ID"
               required
             />
-            <label for="email" class="required">MAIL ID</label>
+            <label for="main_email" class="required"
+              >PUJA COMMITTEE MAIL ID</label
+            >
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="secondary_email"
+              type="email"
+              placeholder="Enter Your Primary Mail ID"
+              required
+            />
+            <label for="secondary_email" class="required"
+              >ALTERNATE MAIL ID</label
+            >
           </div>
         </div>
         <div class="row">
@@ -436,6 +459,32 @@
         <div class="row">
           <div class="input-field col s12 m6">
             <input
+              id="secretary_name"
+              type="text"
+              placeholder="Enter Your Secretary's Name"
+              required
+            />
+            <label for="secretary_name" class="required"
+              >SECRETARY'S NAME</label
+            >
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="secretary_phone"
+              type="tel"
+              placeholder="Enter Your Secretary's Phone Number"
+              required
+              pattern="\d{10}"
+            />
+            <label for="secretary_phone" class="required"
+              >SECRETARY'S PHONE NO</label
+            >
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
               id="theme_artists_name"
               type="text"
               placeholder="Enter Your Theme Artist's Name"
@@ -534,6 +583,134 @@
             <label for="decorator_phone" class="required"
               >DECORATOR'S PHONE NO</label
             >
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="registration_no"
+              type="text"
+              placeholder="Enter Your Registration Number"
+              required
+            />
+            <label for="registration_no" class="required"
+              >REGISTRATION NO</label
+            >
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="social_work"
+              type="text"
+              placeholder="Enter Your Past Year's Social Works / 'NA' For None"
+              required
+            />
+            <label for="social_work" class="required">SOCIAL WORK</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="electric_consumption"
+              type="text"
+              placeholder="Enter Your Last 3 Year's Electric Consumption in KW"
+              required
+            />
+            <label for="electric_consumption" class="required"
+              >LAST 3 YEARS ELECTRIC CONSUMPTION</label
+            >
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="last_3_years_budget"
+              type="text"
+              placeholder="Enter Your Last 3 Years Puja Budget in approx."
+              required
+            />
+            <label for="last_3_years_budget" class="required"
+              >LAST 3 YEARS BUDGET (Approx.)</label
+            >
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="last_year_prize_name"
+              type="text"
+              placeholder="Enter Prize Name Separated By Commas."
+              required
+            />
+            <label for="last_year_prize_name" class="required"
+              >LAST YEAR PRIZE NAME (2022)</label
+            >
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="asian_paints_winning_year"
+              type="text"
+              placeholder="Enter Asian Paints Winning Year / 'NA' For None"
+              required
+            />
+            <label for="asian_paints_winning_year" class="required"
+              >ASIAN PAINTS WINNING YEAR</label
+            >
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="club_bank_details"
+              type="text"
+              placeholder="Enter Your Club's Bank Account Name."
+              required
+            />
+            <label for="club_bank_details" class="required"
+              >CLUB BANK DETAILS (BANK NAME)</label
+            >
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="account_no"
+              type="text"
+              placeholder="Enter Your Club's Bank Account Number."
+              required
+            />
+            <label for="account_no" class="required">ACCOUNT NO.</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="ifsc_code_no"
+              type="text"
+              placeholder="Enter Your Club's Bank IFSC Code Number."
+              required
+            />
+            <label for="ifsc_code_no" class="required">IFSC CODE NO.</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="branch_name"
+              type="text"
+              placeholder="Enter Your Club's Bank Branch Name."
+              required
+            />
+            <label for="branch_name" class="required">BRANCH NAME</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="pan_card_no"
+              type="text"
+              placeholder="Enter PAN Card No."
+              required
+            />
+            <label for="pan_card_no" class="required">PAN CARD NO.</label>
           </div>
         </div>
         <button class="btn waves-effect waves-light" type="submit">
