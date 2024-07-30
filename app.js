@@ -16,6 +16,25 @@ document.addEventListener("DOMContentLoaded", function () {
       : ""; // Add commas and rupee symbol
   });
 
+  // Function to validate phone numbers
+  function validatePhoneNumber(value) {
+    return /^\d{10}$/.test(value);
+  }
+
+  // Validate that all phone numbers are 10 digits
+  function validatePhoneNumbers() {
+    const phoneIds = [
+      "presidents_phone",
+      "theme_artists_phone",
+      "light_artists_phone",
+      "music_artists_phone",
+      "decorator_phone",
+    ];
+    return phoneIds.every((id) =>
+      validatePhoneNumber(document.getElementById(id).value.trim())
+    );
+  }
+
   // Prevent duplicate names and phone numbers
   var contactNames = ["contact_name_1", "contact_name_2", "contact_name_3"];
   var contactPhones = ["contact_phone_1", "contact_phone_2", "contact_phone_3"];
@@ -39,9 +58,13 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("puja-form").addEventListener("submit", function (e) {
     var namesValid = checkForDuplicates(contactNames, "name");
     var phonesValid = checkForDuplicates(contactPhones, "phone number");
+    var phoneNumbersValid = validatePhoneNumbers();
 
-    if (!namesValid || !phonesValid) {
-      e.preventDefault(); // Prevent form submission if duplicates are found
+    if (!namesValid || !phonesValid || !phoneNumbersValid) {
+      e.preventDefault(); // Prevent form submission if validation fails
+      if (!phoneNumbersValid) {
+        alert("Please ensure all phone numbers are 10 digits long.");
+      }
     }
   });
 });
