@@ -8,6 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
     this.value = this.value.toUpperCase();
   });
 
+  // Format BUDGET field
+  document.getElementById("budget").addEventListener("input", function () {
+    this.value = this.value.replace(/[^\d]/g, ""); // Remove non-digit characters
+    this.value = this.value
+      ? "₹" + this.value.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+      : ""; // Add commas and rupee symbol
+  });
+
   // Prevent duplicate names and phone numbers
   var contactNames = ["contact_name_1", "contact_name_2", "contact_name_3"];
   var contactPhones = ["contact_phone_1", "contact_phone_2", "contact_phone_3"];
