@@ -93,6 +93,10 @@ span {
   .btn {
     width: 100%;
   }
+  h4 {
+    text-align: center;
+    font-size: 1rem;
+  }
 }
 
 /* Additional Styles */
