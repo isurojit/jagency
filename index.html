@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puja Form</title>
+    <!-- Materialize CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h4>Puja Registration Form</h4>
+      <form>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="puja_name"
+              type="text"
+              placeholder="Write Puja Name"
+              required
+            />
+            <label for="puja_name" class="required">NAME OF THE PUJA</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="puja_name_bengali"
+              type="text"
+              placeholder="পুজোর নাম লিখুন"
+              required
+            />
+            <label for="puja_name_bengali" class="required">পুজোর নাম</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="address"
+              type="text"
+              placeholder="Write Short Address"
+              required
+            />
+            <label for="address" class="required">ADDRESS</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <select id="city" required>
+              <option value="" disabled selected>Choose Your City</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Howrah">Howrah</option>
+            </select>
+            <label for="city" class="required">CITY</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="district"
+              type="text"
+              placeholder="Write Your District"
+              required
+            />
+            <label for="district" class="required">DISTRICT</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="state"
+              type="text"
+              placeholder="Write Your State"
+              pattern="[A-Za-z]+"
+              required
+            />
+            <label for="state" class="required">STATE</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input id="country" type="text" value="INDIA" readonly required />
+            <label for="country" class="required">COUNTRY</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="pin_code"
+              type="text"
+              placeholder="Enter Your Pin Code"
+              pattern="[0-9]+"
+              required
+            />
+            <label for="pin_code" class="required">PIN CODE / ZIP CODE</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <select id="zone" required>
+              <option value="" disabled selected>Select Your Zone</option>
+              <option value="North Kolkata">North Kolkata</option>
+              <option value="Central Kolkata">Central Kolkata</option>
+              <option value="South Kolkata">South Kolkata</option>
+              <option value="East Kolkata">East Kolkata</option>
+              <option value="West Kolkata">West Kolkata</option>
+              <option value="Salt Lake">Salt Lake</option>
+              <option value="Howrah">Howrah</option>
+              <option value="North 24 Parganas">North 24 Parganas</option>
+            </select>
+            <label for="zone" class="required">ZONE</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="municipality"
+              type="text"
+              placeholder="Enter Your Municipality Name"
+              required
+            />
+            <label for="municipality" class="required">MUNICIPALITY</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="ward"
+              type="text"
+              placeholder="Enter Your Ward No."
+              required
+            />
+            <label for="ward" class="required">WARD NO.</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="borough"
+              type="text"
+              placeholder="Enter Your Borough No."
+              required
+            />
+            <label for="borough" class="required">BOROUGH NO.</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="police_station"
+              type="text"
+              placeholder="Enter Your Police Station."
+              required
+            />
+            <label for="police_station" class="required">POLICE STATION.</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="landmark"
+              type="text"
+              placeholder="Enter Your Nearest Landmark"
+              required
+            />
+            <label for="landmark" class="required">NEAREST LANDMARK</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="post_office"
+              type="text"
+              placeholder="Enter Your Post Office Name"
+              required
+            />
+            <label for="post_office" class="required">POST OFFICE</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="website_name"
+              type="text"
+              placeholder="Enter Your Puja Website Name. Write NA, if don't have."
+              pattern="^\S+$"
+              required
+            />
+            <label for="website_name" class="required">WEBSITE NAME</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="google_map_location"
+              type="url"
+              placeholder="Enter Your Puja's Google Map Location Link"
+              required
+            />
+            <label for="google_map_location" class="required"
+              >GOOGLE MAP LOCATION LINK</label
+            >
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="puja_estd_year"
+              type="text"
+              placeholder="Enter Your Puja ESTD (Inaugural) YEAR"
+              required
+              pattern="\d{4}"
+            />
+            <label for="puja_estd_year" class="required"
+              >PUJA ESTD (INAUGURAL) YEAR</label
+            >
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6 pujaTypeFiled">
+            <label class="pujatype" class="required">PUJA TYPE</label>
+            <p>
+              <label>
+                <input
+                  name="puja_type"
+                  type="radio"
+                  value="Traditional"
+                  required
+                />
+                <span>Traditional</span>
+              </label>
+              <label>
+                <input name="puja_type" type="radio" value="Theme-based" />
+                <span>Theme-based</span>
+              </label>
+            </p>
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="facebook_link"
+              type="url"
+              placeholder="Enter Your Link. Write NA, If You Don't Have"
+            />
+            <label for="facebook_link">FACEBOOK ACCOUNT / PAGE LINK</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="instagram_link"
+              type="url"
+              placeholder="Enter Your Link. Write NA, If You Don't Have"
+            />
+            <label for="instagram_link">INSTAGRAM ACCOUNT / PAGE LINK</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="email"
+              type="email"
+              placeholder="Enter Your Primary Mail ID"
+              required
+            />
+            <label for="email" class="required">MAIL ID</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="contact_name_1"
+              type="text"
+              placeholder="Enter Your First Contact Name"
+              required
+              pattern="[A-Za-z\s]+"
+            />
+            <label for="contact_name_1" class="required">Contact Name 1</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="contact_phone_1"
+              type="tel"
+              placeholder="Enter Your First Contact Phone Number"
+              required
+              pattern="\d{10}"
+            />
+            <label for="contact_phone_1" class="required"
+              >Contact Phone Number 1</label
+            >
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="contact_name_2"
+              type="text"
+              placeholder="Enter Your Second Contact Name"
+              required
+              pattern="[A-Za-z\s]+"
+            />
+            <label for="contact_name_2" class="required">Contact Name 2</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="contact_phone_2"
+              type="tel"
+              placeholder="Enter Your Second Contact Phone Number"
+              required
+              pattern="\d{10}"
+            />
+            <label for="contact_phone_2" class="required"
+              >Contact Phone Number 2</label
+            >
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="contact_name_3"
+              type="text"
+              placeholder="Enter Your Third Contact Name"
+              required
+              pattern="[A-Za-z\s]+"
+            />
+            <label for="contact_name_3" class="required">Contact Name 3</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="contact_phone_3"
+              type="tel"
+              placeholder="Enter Your Third Contact Phone Number"
+              required
+              pattern="\d{10}"
+            />
+            <label for="contact_phone_3" class="required"
+              >Contact Phone Number 3</label
+            >
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit">
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+  </body>
+</html>

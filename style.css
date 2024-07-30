@@ -1,0 +1,57 @@
+/* Custom Styles */
+
+/* Ensure the form looks good on different devices */
+.container {
+  margin-top: 50px;
+}
+
+/* Center the submit button */
+button[type="submit"] {
+  display: block;
+  margin: 20px auto;
+}
+
+/* Style adjustments for the input fields */
+.input-field label {
+  font-size: 1.4rem; /* Increase font size */
+  font-weight: bold; /* Make font bold */
+  margin-bottom: 10px; /* Add space below labels */
+  display: inline-block;
+}
+
+.input-field label.required:after {
+  content: " *"; /* Add asterisk after required labels */
+  color: red; /* Asterisk color */
+}
+
+.input-field input[type="text"],
+.input-field input[type="email"],
+.input-field input[type="url"],
+.input-field input[type="tel"],
+.input-field input[type="radio"],
+.input-field select {
+  font-size: 1.2rem; /* Increase font size for inputs */
+  margin-top: 10px; /* Add space above input fields */
+  margin-bottom: 20px; /* Add space below input fields */
+}
+
+/* Additional styling for radio buttons */
+.input-field p {
+  margin-top: 20px; /* Add space above radio button group */
+}
+
+.input-field p label {
+  margin-right: 20px; /* Add space between radio options */
+  font-size: 1.2rem; /* Increase font size for radio labels */
+  font-weight: bold; /* Make radio labels bold */
+}
+
+.pujatype {
+  display: block !important;
+  position: relative !important;
+  margin-bottom: 1rem !important;
+}
+
+.pujaTypeFiled {
+  margin-top: -0.8rem !important;
+}
