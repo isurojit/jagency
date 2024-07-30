@@ -24,16 +24,15 @@
               placeholder="Write Puja Name"
               required
             />
-            <label for="puja_name" class="required">NAME OF THE PUJA</label>
+            <label for="puja_name">NAME OF THE PUJA<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
               id="puja_name_bengali"
               type="text"
-              placeholder="পুজোর নাম বাংলাতে লিখুন"
-              required
+              placeholder="পুজোর নাম বাংলাতে লিখুন "
             />
-            <label for="puja_name_bengali" class="required">পুজোর নাম</label>
+            <label for="puja_name_bengali">পুজোর নাম</label>
           </div>
         </div>
         <div class="row">
@@ -44,7 +43,7 @@
               placeholder="Write Short Address"
               required
             />
-            <label for="address" class="required">ADDRESS</label>
+            <label for="address">ADDRESS<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <select id="city" required>
@@ -52,7 +51,7 @@
               <option value="Kolkata">Kolkata</option>
               <option value="Howrah">Howrah</option>
             </select>
-            <label for="city" class="required">CITY</label>
+            <label for="city">CITY<span>*</span></label>
           </div>
         </div>
         <div class="row">
@@ -63,7 +62,7 @@
               placeholder="Write Your District"
               required
             />
-            <label for="district" class="required">DISTRICT</label>
+            <label for="district">DISTRICT<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -73,13 +72,13 @@
               pattern="[A-Za-z]+"
               required
             />
-            <label for="state" class="required">STATE</label>
+            <label for="state">STATE<span>*</span></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12 m6">
             <input id="country" type="text" value="INDIA" readonly required />
-            <label for="country" class="required">COUNTRY</label>
+            <label for="country">COUNTRY<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -89,7 +88,7 @@
               pattern="[0-9]+"
               required
             />
-            <label for="pin_code" class="required">PIN CODE / ZIP CODE</label>
+            <label for="pin_code">PIN CODE / ZIP CODE<span>*</span></label>
           </div>
         </div>
         <div class="row">
@@ -105,7 +104,7 @@
               <option value="Howrah">Howrah</option>
               <option value="North 24 Parganas">North 24 Parganas</option>
             </select>
-            <label for="zone" class="required">ZONE</label>
+            <label for="zone">ZONE<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -114,7 +113,7 @@
               placeholder="Enter Your Municipality Name"
               required
             />
-            <label for="municipality" class="required">MUNICIPALITY</label>
+            <label for="municipality">MUNICIPALITY<span>*</span></label>
           </div>
         </div>
         <div class="row">
@@ -125,7 +124,7 @@
               placeholder="Enter Your Ward No."
               required
             />
-            <label for="ward" class="required">WARD NO.</label>
+            <label for="ward">WARD NO.<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -134,7 +133,7 @@
               placeholder="Enter Your Borough No."
               required
             />
-            <label for="borough" class="required">BOROUGH NO.</label>
+            <label for="borough">BOROUGH NO.<span>*</span></label>
           </div>
         </div>
         <div class="row">
@@ -145,7 +144,7 @@
               placeholder="Enter Your Police Station."
               required
             />
-            <label for="police_station" class="required">POLICE STATION.</label>
+            <label for="police_station">POLICE STATION.<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -154,7 +153,7 @@
               placeholder="Enter Your Nearest Landmark"
               required
             />
-            <label for="landmark" class="required">NEAREST LANDMARK</label>
+            <label for="landmark">NEAREST LANDMARK<span>*</span></label>
           </div>
         </div>
         <div class="row">
@@ -292,7 +291,7 @@
             <input
               id="theme_name_bengali"
               type="text"
-              placeholder="পুজোর থিমের নাম বাংলাতে লিখুন"
+              placeholder="পুজোর থিমের নাম বাংলাতে লিখুন / অথবা 'NA' টাইপ করুন"
               required
             />
             <label for="theme_name_bengali" class="required"
@@ -610,13 +609,37 @@
         <div class="row">
           <div class="input-field col s12 m6">
             <input
-              id="electric_consumption"
+              id="electric_consumption_2021"
               type="text"
-              placeholder="Enter Your Last 3 Year's Electric Consumption in KW"
+              placeholder="Enter Your Electric Consumption of Year 2021 in KW"
               required
             />
-            <label for="electric_consumption" class="required"
-              >LAST 3 YEARS ELECTRIC CONSUMPTION</label
+            <label for="electric_consumption_2021" class="required"
+              >ELECTRIC CONSUMPTION YEAR 2021</label
+            >
+          </div>
+          <div class="input-field col s12 m6">
+            <input
+              id="electric_consumption_2022"
+              type="text"
+              placeholder="Enter Your Electric Consumption of Year 2022 in KW"
+              required
+            />
+            <label for="electric_consumption_2022" class="required"
+              >ELECTRIC CONSUMPTION YEAR 2022</label
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m6">
+            <input
+              id="electric_consumption_2023"
+              type="text"
+              placeholder="Enter Your Electric Consumption of Year 2023 in KW"
+              required
+            />
+            <label for="electric_consumption_2023" class="required"
+              >ELECTRIC CONSUMPTION YEAR 2023</label
             >
           </div>
           <div class="input-field col s12 m6">
