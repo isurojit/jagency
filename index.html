@@ -3,16 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Puja Form</title>
+    <title>Durga Puja Registration Form</title>
     <!-- Materialize CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
+    <link rel="shortcut icon" href="./img/puja.png" type="image/x-icon" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="banner">
+      <img src="./img/poster2.jpg" alt="Banner Image" />
+    </div>
     <div class="container">
       <h4>︵‿︵‿୨ রেজিস্ট্রেশন ফর্ম ୧‿︵‿︵</h4>
       <!-- দুর্গা পূজা  -->
@@ -165,7 +169,7 @@
               placeholder="Enter Your Post Office Name"
               required
             />
-            <label for="post_office" class="required">POST OFFICE</label>
+            <label for="post_office">POST OFFICE<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -175,7 +179,7 @@
               pattern="^\S+$"
               required
             />
-            <label for="website_name" class="required">WEBSITE NAME</label>
+            <label for="website_name">WEBSITE NAME<span>*</span></label>
           </div>
         </div>
 
@@ -187,8 +191,8 @@
               placeholder="Enter Your Puja's Google Map Location Link"
               required
             />
-            <label for="google_map_location" class="required"
-              >GOOGLE MAP LOCATION LINK</label
+            <label for="google_map_location"
+              >GOOGLE MAP LOCATION LINK<span>*</span></label
             >
           </div>
           <div class="input-field col s12 m6">
@@ -199,15 +203,15 @@
               required
               pattern="\d{4}"
             />
-            <label for="puja_estd_year" class="required"
-              >PUJA ESTD (INAUGURAL) YEAR</label
+            <label for="puja_estd_year"
+              >PUJA ESTD (INAUGURAL) YEAR<span>*</span></label
             >
           </div>
         </div>
 
         <div class="row">
           <div class="input-field col s12 m6 pujaTypeFiled">
-            <label class="pujatype" class="required">PUJA TYPE</label>
+            <label class="pujatype">PUJA TYPE<span>*</span></label>
             <p>
               <label>
                 <input
@@ -260,9 +264,7 @@
               placeholder="Enter Your Primary Mail ID"
               required
             />
-            <label for="main_email" class="required"
-              >PUJA COMMITTEE MAIL ID</label
-            >
+            <label for="main_email">PUJA COMMITTEE MAIL ID<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -271,9 +273,7 @@
               placeholder="Enter Your Primary Mail ID"
               required
             />
-            <label for="secondary_email" class="required"
-              >ALTERNATE MAIL ID</label
-            >
+            <label for="secondary_email">ALTERNATE MAIL ID<span>*</span></label>
           </div>
         </div>
 
@@ -286,7 +286,7 @@
               required
               pattern="[A-Za-z\s]+"
             />
-            <label for="theme_name" class="required">THEME NAME</label>
+            <label for="theme_name">THEME NAME<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -295,8 +295,8 @@
               placeholder="পুজোর থিমের নাম বাংলাতে লিখুন / অথবা 'NA' টাইপ করুন"
               required
             />
-            <label for="theme_name_bengali" class="required"
-              >পুজোর থিমের নাম</label
+            <label for="theme_name_bengali"
+              >পুজোর থিমের নাম<span>*</span></label
             >
           </div>
         </div>
@@ -328,7 +328,7 @@
               placeholder="Mention Your Puja Budget Of This Year"
               required
             />
-            <label for="budget" class="required">BUDGET</label>
+            <label for="budget">BUDGET<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -337,22 +337,20 @@
               placeholder="Write Names Of Materials Separate By Commas."
               required
             />
-            <label for="materials_used" class="required"
-              >MATERIALS USED IN THE PUJA MANDOOP</label
+            <label for="materials_used"
+              >MATERIALS USED IN THE PUJA MANDOOP<span>*</span></label
             >
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12 m6">
             <input id="khuti_puja_date" type="date" required />
-            <label for="khuti_puja_date" class="required"
-              >KHUTI PUJA DATE</label
-            >
+            <label for="khuti_puja_date">KHUTI PUJA DATE<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input id="opening_ceremony_date" type="date" required />
-            <label for="opening_ceremony_date" class="required"
-              >OPENING CEREMONY DATE</label
+            <label for="opening_ceremony_date"
+              >OPENING CEREMONY DATE<span>*</span></label
             >
           </div>
         </div>
@@ -365,9 +363,7 @@
               placeholder="Enter Your President's Name"
               required
             />
-            <label for="presidents_name" class="required"
-              >PRESIDENT'S NAME</label
-            >
+            <label for="presidents_name">PRESIDENT'S NAME<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -377,8 +373,8 @@
               required
               pattern="\d{10}"
             />
-            <label for="presidents_phone" class="required"
-              >PRESIDENT'S PHONE NO</label
+            <label for="presidents_phone"
+              >PRESIDENT'S PHONE NO<span>*</span></label
             >
           </div>
         </div>
@@ -391,9 +387,7 @@
               placeholder="Enter Your Secretary's Name"
               required
             />
-            <label for="secretary_name" class="required"
-              >SECRETARY'S NAME</label
-            >
+            <label for="secretary_name">SECRETARY'S NAME<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -403,8 +397,8 @@
               required
               pattern="\d{10}"
             />
-            <label for="secretary_phone" class="required"
-              >SECRETARY'S PHONE NO</label
+            <label for="secretary_phone"
+              >SECRETARY'S PHONE NO<span>*</span></label
             >
           </div>
         </div>
@@ -417,7 +411,7 @@
               required
               pattern="[A-Za-z\s]+"
             />
-            <label for="contact_name_1" class="required">Contact Name 1</label>
+            <label for="contact_name_1">Contact Name 1<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -427,8 +421,8 @@
               required
               pattern="\d{10}"
             />
-            <label for="contact_phone_1" class="required"
-              >Contact Phone Number 1</label
+            <label for="contact_phone_1"
+              >Contact Phone Number 1<span>*</span></label
             >
           </div>
         </div>
@@ -442,7 +436,7 @@
               required
               pattern="[A-Za-z\s]+"
             />
-            <label for="contact_name_2" class="required">Contact Name 2</label>
+            <label for="contact_name_2">Contact Name 2<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -452,8 +446,8 @@
               required
               pattern="\d{10}"
             />
-            <label for="contact_phone_2" class="required"
-              >Contact Phone Number 2</label
+            <label for="contact_phone_2"
+              >Contact Phone Number 2<span>*</span></label
             >
           </div>
         </div>
@@ -466,7 +460,7 @@
               required
               pattern="[A-Za-z\s]+"
             />
-            <label for="contact_name_3" class="required">Contact Name 3</label>
+            <label for="contact_name_3">Contact Name 3<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -476,8 +470,8 @@
               required
               pattern="\d{10}"
             />
-            <label for="contact_phone_3" class="required"
-              >Contact Phone Number 3</label
+            <label for="contact_phone_3"
+              >Contact Phone Number 3<span>*</span></label
             >
           </div>
         </div>
@@ -489,8 +483,8 @@
               placeholder="Enter Your Theme Artist's Name"
               required
             />
-            <label for="theme_artists_name" class="required"
-              >THEME ARTIST'S NAME</label
+            <label for="theme_artists_name"
+              >THEME ARTIST'S NAME<span>*</span></label
             >
           </div>
           <div class="input-field col s12 m6">
@@ -501,8 +495,8 @@
               required
               pattern="\d{10}"
             />
-            <label for="theme_artists_phone" class="required"
-              >THEME ARTIST'S PHONE NO</label
+            <label for="theme_artists_phone"
+              >THEME ARTIST'S PHONE NO<span>*</span></label
             >
           </div>
         </div>
@@ -515,8 +509,8 @@
               placeholder="Enter Your Light Artist's Name"
               required
             />
-            <label for="light_artists_name" class="required"
-              >LIGHT ARTIST'S NAME</label
+            <label for="light_artists_name"
+              >LIGHT ARTIST'S NAME<span>*</span></label
             >
           </div>
           <div class="input-field col s12 m6">
@@ -527,8 +521,8 @@
               required
               pattern="\d{10}"
             />
-            <label for="light_artists_phone" class="required"
-              >LIGHT ARTIST'S PHONE NO</label
+            <label for="light_artists_phone"
+              >LIGHT ARTIST'S PHONE NO<span>*</span></label
             >
           </div>
         </div>
@@ -541,8 +535,8 @@
               placeholder="Enter Your Music Artist's Name"
               required
             />
-            <label for="music_artists_name" class="required"
-              >MUSIC ARTIST'S NAME</label
+            <label for="music_artists_name"
+              >MUSIC ARTIST'S NAME<span>*</span></label
             >
           </div>
           <div class="input-field col s12 m6">
@@ -553,8 +547,8 @@
               required
               pattern="\d{10}"
             />
-            <label for="music_artists_phone" class="required"
-              >MUSIC ARTIST'S PHONE NO</label
+            <label for="music_artists_phone"
+              >MUSIC ARTIST'S PHONE NO<span>*</span></label
             >
           </div>
         </div>
@@ -567,9 +561,7 @@
               placeholder="Enter Your Decorator's Name"
               required
             />
-            <label for="decorator_name" class="required"
-              >DECORATOR'S NAME</label
-            >
+            <label for="decorator_name">DECORATOR'S NAME<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -579,8 +571,8 @@
               required
               pattern="\d{10}"
             />
-            <label for="decorator_phone" class="required"
-              >DECORATOR'S PHONE NO</label
+            <label for="decorator_phone"
+              >DECORATOR'S PHONE NO<span>*</span></label
             >
           </div>
         </div>
@@ -592,9 +584,7 @@
               placeholder="Enter Your Registration Number"
               required
             />
-            <label for="registration_no" class="required"
-              >REGISTRATION NO</label
-            >
+            <label for="registration_no">REGISTRATION NO<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -603,7 +593,7 @@
               placeholder="Enter Your Past Year's Social Works / 'NA' For None"
               required
             />
-            <label for="social_work" class="required">SOCIAL WORK</label>
+            <label for="social_work">SOCIAL WORK<span>*</span></label>
           </div>
         </div>
 
@@ -615,8 +605,8 @@
               placeholder="Enter Your Electric Consumption of Year 2021 in KW"
               required
             />
-            <label for="electric_consumption_2021" class="required"
-              >ELECTRIC CONSUMPTION YEAR 2021</label
+            <label for="electric_consumption_2021"
+              >ELECTRIC CONSUMPTION YEAR 2021<span>*</span></label
             >
           </div>
           <div class="input-field col s12 m6">
@@ -626,8 +616,8 @@
               placeholder="Enter Your Electric Consumption of Year 2022 in KW"
               required
             />
-            <label for="electric_consumption_2022" class="required"
-              >ELECTRIC CONSUMPTION YEAR 2022</label
+            <label for="electric_consumption_2022"
+              >ELECTRIC CONSUMPTION YEAR 2022<span>*</span></label
             >
           </div>
         </div>
@@ -639,8 +629,8 @@
               placeholder="Enter Your Electric Consumption of Year 2023 in KW"
               required
             />
-            <label for="electric_consumption_2023" class="required"
-              >ELECTRIC CONSUMPTION YEAR 2023</label
+            <label for="electric_consumption_2023"
+              >ELECTRIC CONSUMPTION YEAR 2023<span>*</span></label
             >
           </div>
           <div class="input-field col s12 m6">
@@ -650,8 +640,8 @@
               placeholder="Enter Your Last 3 Years Puja Budget in approx."
               required
             />
-            <label for="last_3_years_budget" class="required"
-              >LAST 3 YEARS BUDGET (Approx.)</label
+            <label for="last_3_years_budget"
+              >LAST 3 YEARS BUDGET (Approx.)<span>*</span></label
             >
           </div>
         </div>
@@ -661,11 +651,11 @@
             <input
               id="last_year_prize_name"
               type="text"
-              placeholder="Enter Prize Name Separated By Commas."
+              placeholder="Enter Prize Name Separated By Commas / 'NA' For None"
               required
             />
-            <label for="last_year_prize_name" class="required"
-              >LAST YEAR PRIZE NAME (2022)</label
+            <label for="last_year_prize_name"
+              >LAST YEAR PRIZE NAME (2022)<span>*</span></label
             >
           </div>
           <div class="input-field col s12 m6">
@@ -675,8 +665,8 @@
               placeholder="Enter Asian Paints Winning Year / 'NA' For None"
               required
             />
-            <label for="asian_paints_winning_year" class="required"
-              >ASIAN PAINTS WINNING YEAR</label
+            <label for="asian_paints_winning_year"
+              >ASIAN PAINTS WINNING YEAR<span>*</span></label
             >
           </div>
         </div>
@@ -689,8 +679,8 @@
               placeholder="Enter Your Club's Bank Account Name."
               required
             />
-            <label for="club_bank_details" class="required"
-              >CLUB BANK DETAILS (BANK NAME)</label
+            <label for="club_bank_details"
+              >CLUB BANK DETAILS (BANK NAME)<span>*</span></label
             >
           </div>
           <div class="input-field col s12 m6">
@@ -700,7 +690,7 @@
               placeholder="Enter Your Club's Bank Account Number."
               required
             />
-            <label for="account_no" class="required">ACCOUNT NO.</label>
+            <label for="account_no">ACCOUNT NO.<span>*</span></label>
           </div>
         </div>
 
@@ -712,7 +702,7 @@
               placeholder="Enter Your Club's Bank IFSC Code Number."
               required
             />
-            <label for="ifsc_code_no" class="required">IFSC CODE NO.</label>
+            <label for="ifsc_code_no">IFSC CODE NO.<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -721,7 +711,7 @@
               placeholder="Enter Your Club's Bank Branch Name."
               required
             />
-            <label for="branch_name" class="required">BRANCH NAME</label>
+            <label for="branch_name">BRANCH NAME<span>*</span></label>
           </div>
         </div>
 
@@ -733,15 +723,34 @@
               placeholder="Enter PAN Card No."
               required
             />
-            <label for="pan_card_no" class="required">PAN CARD NO.</label>
+            <label for="pan_card_no">PAN CARD NO.<span>*</span></label>
           </div>
         </div>
+
         <button class="btn waves-effect waves-light" type="submit">
           Submit
         </button>
       </form>
     </div>
-
+    <div class="banner">
+      <img src="./img/poster1.jpg" alt="Banner Image" />
+    </div>
+    <!-- footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-content">
+          <p>
+            &copy; <span id="currentYear"></span> J Agency. All rights reserved.
+          </p>
+          <p class="author">
+            Site Designed and Maintained by:
+            <a href="https://www.linkedin.com/in/surojit-manna/" target="_blank"
+              >Surojit Manna</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Custom JS -->

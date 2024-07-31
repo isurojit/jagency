@@ -80,3 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// footer year
+document.getElementById("currentYear").textContent = new Date().getFullYear();
