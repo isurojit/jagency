@@ -6,12 +6,13 @@ body {
   background-image: url("./img/background_img.jpg");
   background-repeat: repeat;
   color: #333;
-  margin: 0;
+  margin: auto;
   padding: 0;
+  width: 100%;
 }
 .banner img {
   width: 100%;
-
+  height: auto;
   display: block;
   margin: auto;
 }

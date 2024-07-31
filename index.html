@@ -15,14 +15,10 @@
   </head>
   <body>
     <div class="banner">
-      <img src="./img/agency_banner.jpg" alt="Banner Image" />
+      <img src="./img/agency_banner.png" alt="Banner Image" />
     </div>
-    <!-- <div class="banner">
-      <img src="./img/poster2.jpg" alt="Banner Image" />
-    </div> -->
     <div class="container">
-      <h4>︵‿︵‿୨ রেজিস্ট্রেশন ফর্ম ୧‿︵‿︵</h4>
-      <!-- দুর্গা পূজা  -->
+      <h4>︵‿︵‿୨ REGISTRATION FORM ୧‿︵‿︵</h4>
       <form>
         <div class="row">
           <div class="input-field col s12 m6">
@@ -235,23 +231,14 @@
         </div>
 
         <div class="row">
-          <div class="input-field col s12 m6 pujaTypeFiled">
-            <label class="pujatype list">PUJA TYPE<span>*</span></label>
-            <p>
-              <label>
-                <input
-                  name="puja_type"
-                  type="radio"
-                  value="Housing-Complex"
-                  required
-                />
-                <span>Housing Complex </span>
-              </label>
-              <label>
-                <input name="puja_type" type="radio" value="Theme-based" />
-                <span>Theme-based (Barowari)</span>
-              </label>
-            </p>
+          <div class="input-field col s12 m6">
+            <input
+              name="Yt_Link"
+              id="youtube_link"
+              type="url"
+              placeholder="Enter Your Link. Write NA, If You Don't Have"
+            />
+            <label for="youtube_link">YOUTUBE ACCOUNT / PAGE LINK</label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -276,17 +263,6 @@
           </div>
           <div class="input-field col s12 m6">
             <input
-              name="Yt_Link"
-              id="youtube_link"
-              type="url"
-              placeholder="Enter Your Link. Write NA, If You Don't Have"
-            />
-            <label for="youtube_link">YOUTUBE ACCOUNT / PAGE LINK</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
               name="Main_Mail_ID"
               id="main_email"
               type="email"
@@ -295,6 +271,8 @@
             />
             <label for="main_email">PUJA COMMITTEE MAIL ID<span>*</span></label>
           </div>
+        </div>
+        <div class="row">
           <div class="input-field col s12 m6">
             <input
               name="Alternate_Mail_ID"
@@ -304,6 +282,24 @@
               required
             />
             <label for="secondary_email">ALTERNATE MAIL ID<span>*</span></label>
+          </div>
+          <div class="input-field col s12 m6 pujaTypeFiled">
+            <label class="pujatype list">PUJA TYPE<span>*</span></label>
+            <p>
+              <label>
+                <input
+                  name="puja_type"
+                  type="radio"
+                  value="Housing-Complex"
+                  required
+                />
+                <span>Housing Complex </span>
+              </label>
+              <label>
+                <input name="puja_type" type="radio" value="Theme-based" />
+                <span>Theme-based (Barowari)</span>
+              </label>
+            </p>
           </div>
         </div>
 
@@ -410,7 +406,7 @@
               placeholder="Enter Your President's Name"
               required
             />
-            <label for="presidents_name">PRESIDENT'S NAME<span>*</span></label>
+            <label for="presidents_name">PRESIDENT NAME<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -422,7 +418,7 @@
               pattern="\d{10}"
             />
             <label for="presidents_phone"
-              >PRESIDENT'S PHONE NO<span>*</span></label
+              >PRESIDENT PHONE NO<span>*</span></label
             >
           </div>
         </div>
@@ -436,7 +432,7 @@
               placeholder="Enter Your Secretary's Name"
               required
             />
-            <label for="secretary_name">SECRETARY'S NAME<span>*</span></label>
+            <label for="secretary_name">SECRETARY NAME<span>*</span></label>
           </div>
           <div class="input-field col s12 m6">
             <input
@@ -448,7 +444,7 @@
               pattern="\d{10}"
             />
             <label for="secretary_phone"
-              >SECRETARY'S PHONE NO<span>*</span></label
+              >SECRETARY PHONE NO<span>*</span></label
             >
           </div>
         </div>
