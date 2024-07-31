@@ -1,3 +1,15 @@
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycbwE0Yr9YrK_hmNHLVRxgNE-tNfxEpYQYssP388ELxTu0-59MUZsDx4dnRlJ4oNAWjYzzQ/exec";
+const form = document.forms["google-sheet"];
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    .then((response) =>
+      alert("Thanks for Submitting The Form..! We Will Contact You Soon...")
+    )
+    .catch((error) => console.error("Error!", error.message));
+});
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize Materialize select elements
   var elems = document.querySelectorAll("select");

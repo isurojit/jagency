@@ -19,7 +19,7 @@
     </div>
     <div class="container">
       <h4>︵‿︵‿୨ REGISTRATION FORM ୧‿︵‿︵</h4>
-      <form>
+      <form autocomplete="off" method="post" name="google-sheet">
         <div class="row">
           <div class="input-field col s12 m6">
             <input
@@ -802,7 +802,11 @@
           </div>
         </div>
 
-        <button class="btn waves-effect waves-light" type="submit">
+        <button
+          class="btn waves-effect waves-light"
+          name="submit"
+          type="submit"
+        >
           Submit
         </button>
       </form>
