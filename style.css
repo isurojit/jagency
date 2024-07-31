@@ -134,7 +134,7 @@ input[type="email"],
 input[type="tel"],
 input[type="url"],
 select {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.6;
 }
 
@@ -190,4 +190,7 @@ footer {
     justify-content: space-between;
     text-align: left;
   }
+}
+.list {
+  font-size: 1rem !important;
 }
