@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(scriptURL, { method: "POST", body: new FormData(form) })
       .then((response) => {
         alert("Thanks for Submitting The Form..! We Will Contact You Soon...");
-        setTimeout(() => {
-          window.location.reload(); // Reload the page after 2 seconds
-        }, 2000);
+        // setTimeout(() => {
+        //   window.location.reload(); // Reload the page after 2 seconds
+        // }, 2000);
       })
       .catch((error) => console.error("Error!", error.message));
   });
