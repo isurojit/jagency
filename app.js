@@ -1,25 +1,27 @@
-const scriptURL =
-  "https://script.google.com/macros/s/AKfycbwE0Yr9YrK_hmNHLVRxgNE-tNfxEpYQYssP388ELxTu0-59MUZsDx4dnRlJ4oNAWjYzzQ/exec";
-const form = document.forms["google-sheet"];
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  fetch(scriptURL, { method: "POST", body: new FormData(form) })
-    .then((response) =>
-      alert("Thanks for Submitting The Form..! We Will Contact You Soon...")
-    )
-    .catch((error) => console.error("Error!", error.message));
-});
 document.addEventListener("DOMContentLoaded", function () {
+  const scriptURL =
+    "https://script.google.com/macros/s/AKfycbwE0Yr9YrK_hmNHLVRxgNE-tNfxEpYQYssP388ELxTu0-59MUZsDx4dnRlJ4oNAWjYzzQ/exec";
+  const form = document.forms["google-sheet"];
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    fetch(scriptURL, { method: "POST", body: new FormData(form) })
+      .then((response) => {
+        alert("Thanks for Submitting The Form..! We Will Contact You Soon...");
+        setTimeout(() => {
+          window.location.reload(); // Reload the page after 2 seconds
+        }, 2000);
+      })
+      .catch((error) => console.error("Error!", error.message));
+  });
+
   // Initialize Materialize select elements
   var elems = document.querySelectorAll("select");
   M.FormSelect.init(elems);
 
   // Uppercase conversion for NAME OF THE PUJA
-  document.querySelectorAll(".uppercase").forEach(function (element) {
-    element.addEventListener("input", function () {
-      this.value = this.value.toUpperCase();
-    });
+  document.getElementById("puja_name").addEventListener("input", function () {
+    this.value = this.value.toUpperCase();
   });
 
   // Format BUDGET and LAST 3 YEARS BUDGET fields
@@ -33,14 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   formatCurrency("budget");
-
-  // Add 'KW' suffix for electric consumption
-  document
-    .getElementById("electric_consumption")
-    .addEventListener("input", function () {
-      this.value = this.value.replace(/[^\d]/g, ""); // Remove non-digit characters
-      this.value = this.value ? this.value + " KW" : ""; // Add 'KW' suffix
-    });
 
   // Validate that all phone numbers are 10 digits
   function validatePhoneNumber(value) {
@@ -80,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
-  document.getElementById("puja-form").addEventListener("submit", function (e) {
+  form.addEventListener("submit", function (e) {
     var namesValid = checkForDuplicates(contactNames, "name");
     var phonesValid = checkForDuplicates(contactPhones, "phone number");
     var phoneNumbersValid = validatePhoneNumbers();
@@ -92,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-});
 
-// footer year
-document.getElementById("currentYear").textContent = new Date().getFullYear();
+  // Set the current year in the footer
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+});
