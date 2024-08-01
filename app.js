@@ -6,9 +6,9 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) => {
-      window.location.href = "thankyou.html";
+      window.location.href = "https://jagency.netlify.app/thankyou.html";
       setTimeout(() => {
-        window.location.href = "index.html";
+        window.location.href = "https://jagency.netlify.app";
       }, 5000); // Redirect back after 5 seconds (5000 milliseconds)
     })
     .catch((error) => console.error("Error!", error.message));
