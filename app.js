@@ -5,9 +5,12 @@ const form = document.forms["google-sheet"];
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
-    .then((response) =>
-      alert("Thanks for Submitting The Form..! We Will Contact You Soon...")
-    )
+    .then((response) => {
+      window.location.href = "thankyou.html";
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 5000); // Redirect back after 5 seconds (5000 milliseconds)
+    })
     .catch((error) => console.error("Error!", error.message));
 });
 document.addEventListener("DOMContentLoaded", function () {
@@ -16,8 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
   M.FormSelect.init(elems);
 
   // Uppercase conversion for NAME OF THE PUJA
-  document.getElementById("puja_name").addEventListener("input", function () {
-    this.value = this.value.toUpperCase();
+  document.querySelectorAll(".uppercase").forEach(function (element) {
+    element.addEventListener("input", function () {
+      this.value = this.value.toUpperCase();
+    });
   });
 
   // Format BUDGET and LAST 3 YEARS BUDGET fields
@@ -31,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   formatCurrency("budget");
-  formatCurrency("last_3_years_budget");
 
   // Add 'KW' suffix for electric consumption
   document
