@@ -1,20 +1,20 @@
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycbwE0Yr9YrK_hmNHLVRxgNE-tNfxEpYQYssP388ELxTu0-59MUZsDx4dnRlJ4oNAWjYzzQ/exec";
+const form = document.forms["google-sheet"];
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetch(scriptURL, { method: "POST", body: new FormData(form) })
+    .then((response) => {
+      alert("Thanks for Submitting The Form..! We Will Contact You Soon...");
+      // setTimeout(() => {
+      //   window.location.reload(); // Reload the page after 2 seconds
+      // }, 2000);
+    })
+    .catch((error) => console.error("Error!", error.message));
+});
+
 document.addEventListener("DOMContentLoaded", function () {
-  const scriptURL =
-    "https://script.google.com/macros/s/AKfycbwE0Yr9YrK_hmNHLVRxgNE-tNfxEpYQYssP388ELxTu0-59MUZsDx4dnRlJ4oNAWjYzzQ/exec";
-  const form = document.forms["google-sheet"];
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    fetch(scriptURL, { method: "POST", body: new FormData(form) })
-      .then((response) => {
-        alert("Thanks for Submitting The Form..! We Will Contact You Soon...");
-        // setTimeout(() => {
-        //   window.location.reload(); // Reload the page after 2 seconds
-        // }, 2000);
-      })
-      .catch((error) => console.error("Error!", error.message));
-  });
-
   // Initialize Materialize select elements
   var elems = document.querySelectorAll("select");
   M.FormSelect.init(elems);
