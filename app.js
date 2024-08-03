@@ -11,14 +11,22 @@ form.addEventListener("submit", (e) => {
     .catch((error) => console.error("Error!", error.message));
 });
 
+form.addEventListener("submit", function (e) {
+  setTimeout(() => {
+    window.location.reload(); // Reload the page after 10 seconds
+  }, 10000);
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize Materialize select elements
   var elems = document.querySelectorAll("select");
   M.FormSelect.init(elems);
 
   // Uppercase conversion for NAME OF THE PUJA
-  document.getElementById("puja_name").addEventListener("input", function () {
-    this.value = this.value.toUpperCase();
+  document.querySelectorAll(".uppercase").forEach(function (element) {
+    element.addEventListener("input", function () {
+      this.value = this.value.toUpperCase();
+    });
   });
 
   // Format BUDGET and LAST 3 YEARS BUDGET fields
