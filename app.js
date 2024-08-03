@@ -14,20 +14,19 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
     .then((response) => {
-      alert("Thanks for Submitting The Form..! We Will Contact You Soon...");
+      window.location.href = "thankyou.html";
       setTimeout(() => {
-        window.location.reload(); // Reload the page after 10 seconds
-        console.log("working");
-      }, 10000);
+        window.location.href = "index.html";
+      }, 5000); // Redirect back after 5 seconds (5000 milliseconds)
     })
     .catch((error) => console.error("Error!", error.message));
 });
 
-form.addEventListener("submit", function (e) {
-  setTimeout(() => {
-    window.location.reload(); // Reload the page after 10 seconds
-  }, 10000);
-});
+// form.addEventListener("submit", function (e) {
+//   setTimeout(() => {
+//     window.location.reload(); // Reload the page after 10 seconds
+//   }, 10000);
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize Materialize select elements
