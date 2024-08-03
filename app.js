@@ -5,12 +5,9 @@ const form = document.forms["google-sheet"];
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   fetch(scriptURL, { method: "POST", body: new FormData(form) })
-    .then((response) => {
-      alert("Thanks for Submitting The Form..! We Will Contact You Soon...");
-      // setTimeout(() => {
-      //   window.location.reload(); // Reload the page after 2 seconds
-      // }, 2000);
-    })
+    .then((response) =>
+      alert("Thanks for Contacting us..! We Will Contact You Soon...")
+    )
     .catch((error) => console.error("Error!", error.message));
 });
 
@@ -54,26 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
-  // // Prevent duplicate names and phone numbers
-  // var contactNames = ["contact_name_1", "contact_name_2", "contact_name_3"];
-  // var contactPhones = ["contact_phone_1", "contact_phone_2", "contact_phone_3"];
-
-  // function checkForDuplicates(fieldIds, type) {
-  //   var values = fieldIds.map((id) =>
-  //     document.getElementById(id).value.trim().toLowerCase()
-  //   );
-  //   var duplicates = values.filter(
-  //     (item, index) => values.indexOf(item) !== index && item !== ""
-  //   );
-  //   if (duplicates.length > 0) {
-  //     alert(
-  //       `Duplicate ${type} found: ${duplicates[0]}. Please ensure all ${type}s are unique.`
-  //     );
-  //     return false;
-  //   }
-  //   return true;
-  // }
-
   form.addEventListener("submit", function (e) {
     var namesValid = checkForDuplicates(contactNames, "name");
     var phonesValid = checkForDuplicates(contactPhones, "phone number");
@@ -86,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
-
-  // Set the current year in the footer
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
 });
+
+// Set the current year in the footer
+document.getElementById("currentYear").textContent = new Date().getFullYear();
