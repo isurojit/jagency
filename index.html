@@ -1,979 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Not Found</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden; /* Prevents scrollbars from the canvas */
+        }
+        /* Canvas for the particle animation */
+        #particle-canvas {
+            position: fixed; /* Use fixed to cover the entire viewport */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Behind the content */
+        }
+        /* Container to ensure content is layered on top of the canvas */
+        .content-container {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
 
-    <title>Durga Puja Registration Form</title>
-    <!-- Materialize CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link rel="shortcut icon" href="./img/puja.png" type="image/x-icon" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="banner">
-      <img src="./img/agency_banner.png" alt="Banner Image" />
-    </div>
-    <div class="container">
-      <h4>REGISTRATION FORM 2024</h4>
-      <form autocomplete="off" method="post" name="google-sheet" id="puja-form">
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Puja_Name"
-              class="uppercase"
-              id="puja_name"
-              type="text"
-              placeholder="Write Puja Name"
-              required
-            />
-            <label for="puja_name">NAME OF THE PUJA<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Puja_Name_Bengali"
-              id="puja_name_bengali"
-              type="text"
-              placeholder="পুজোর নাম বাংলাতে লিখুন / অথবা 'NA' টাইপ করুন"
-            />
-            <label for="puja_name_bengali">পুজোর নাম</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Address"
-              class="uppercase"
-              id="address"
-              type="text"
-              placeholder="Write Short Address"
-              required
-            />
-            <label for="address">ADDRESS<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <select id="city" name="City" required>
-              <option value="" disabled selected>Choose Your City</option>
-              <option value="Kolkata">KOLKATA</option>
-              <option value="Howrah">HOWRAH</option>
-              <option value="Howrah">OTHERS</option>
-            </select>
-            <label for="city" class="list">CITY<span>*</span></label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="District"
-              class="uppercase"
-              id="district"
-              type="text"
-              placeholder="Write Your District"
-              required
-            />
-            <label for="district">DISTRICT<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="State"
-              id="state"
-              type="text"
-              placeholder="Write Your State"
-              value="WEST BENGAL"
-              required
-            />
-            <label for="state">STATE<span>*</span></label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              id="country"
-              type="text"
-              value="INDIA"
-              name="Country"
-              readonly
-              required
-            />
-            <label for="country">COUNTRY<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Pin_Code"
-              id="pin_code"
-              type="text"
-              placeholder="Enter Your Pin Code"
-              pattern="[0-9]+"
-              required
-            />
-            <label for="pin_code">PIN CODE / ZIP CODE<span>*</span></label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <select id="zone" name="Zone" required>
-              <option value="" disabled selected>Select Your Zone</option>
-              <option value="NORTH KOLKATA">NORTH KOLKATA</option>
-              <option value="CENTRAL KOLKATA">CENTRAL KOLKATA</option>
-              <option value="SOUTH KOLKATA">SOUTH KOLKATA</option>
-              <option value="EAST KOLKATA">EAST KOLKATA</option>
-              <option value="WEST KOLKATA">WEST KOLKATA</option>
-              <option value="SALT LAKE">SALT LAKE</option>
-              <option value="HOWRAH">HOWRAH</option>
-              <option value="NORTH 24 PARGANAS">NORTH 24 PARGANAS</option>
-              <option value="SOUTH 24 PARGANAS">SOUTH 24 PARGANAS</option>
-              <option value="OTHERS">OTHERS</option>
-            </select>
-            <label for="zone" class="list">ZONE<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Municipality"
-              class="uppercase"
-              id="municipality"
-              type="text"
-              placeholder="Enter Your Municipality Name"
-              required
-            />
-            <label for="municipality">MUNICIPALITY<span>*</span></label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Ward"
-              id="ward"
-              type="text"
-              placeholder="Enter Your Ward No."
-              required
-            />
-            <label for="ward">WARD NO.<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Borough"
-              id="borough"
-              type="text"
-              placeholder="Enter Your Borough No."
-              required
-            />
-            <label for="borough">BOROUGH NO.<span>*</span></label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Police_Station"
-              class="uppercase"
-              id="police_station"
-              type="text"
-              placeholder="Enter Your Police Station."
-              required
-            />
-            <label for="police_station">POLICE STATION.<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Nearest_Landmark"
-              class="uppercase"
-              id="landmark"
-              type="text"
-              placeholder="Enter Your Nearest Landmark"
-              required
-            />
-            <label for="landmark">NEAREST LANDMARK<span>*</span></label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Post_Office"
-              class="uppercase"
-              id="post_office"
-              type="text"
-              placeholder="Enter Your Post Office Name"
-              required
-            />
-            <label for="post_office">POST OFFICE<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Website_Name"
-              class="uppercase"
-              id="website_name"
-              type="text"
-              placeholder="Enter Your Puja Website Name. Write NA, if don't have."
-              required
-            />
-            <label for="website_name">WEBSITE NAME<span>*</span></label>
-          </div>
-        </div>
+    <!-- The canvas for our particle animation -->
+    <canvas id="particle-canvas"></canvas>
 
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Google_Map_Location"
-              id="google_map_location"
-              type="text"
-              placeholder="Enter Your Puja's Google Map Location Link"
-              required
-            />
-            <label for="google_map_location"
-              >GOOGLE MAP LOCATION LINK<span>*</span></label
-            >
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Puja_Estd_Year"
-              id="puja_estd_year"
-              type="text"
-              placeholder="Enter Your Puja ESTD (Inaugural) YEAR"
-              required
-              pattern="\d{4}"
-            />
-            <label for="puja_estd_year"
-              >PUJA ESTD (INAUGURAL) YEAR<span>*</span></label
-            >
-          </div>
-        </div>
+    <div class="flex items-center justify-center min-h-screen p-4 content-container">
+        <div class="w-full max-w-2xl text-center">
+            
+            <!-- Icon -->
+            <div class="mb-8">
+                <svg class="mx-auto h-20 w-20 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
 
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Yt_Link"
-              id="youtube_link"
-              type="text"
-              placeholder="Enter Your Link. Write NA, If You Don't Have"
-            />
-            <label for="youtube_link">YOUTUBE ACCOUNT / PAGE LINK</label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Fb_Link"
-              id="facebook_link"
-              type="text"
-              placeholder="Enter Your Link. Write NA, If You Don't Have"
-            />
-            <label for="facebook_link">FACEBOOK ACCOUNT / PAGE LINK</label>
-          </div>
-        </div>
+            <!-- Header -->
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                Content No Longer Available
+            </h1>
 
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Ig_Link"
-              id="instagram_link"
-              type="text"
-              placeholder="Enter Your Link. Write NA, If You Don't Have"
-            />
-            <label for="instagram_link">INSTAGRAM ACCOUNT / PAGE LINK</label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Main_Mail_ID"
-              id="main_email"
-              type="email"
-              placeholder="Enter Your Primary Mail ID"
-              required
-            />
-            <label for="main_email">PUJA COMMITTEE MAIL ID<span>*</span></label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Alternate_Mail_ID"
-              id="secondary_email"
-              type="email"
-              placeholder="Enter Your Primary Mail ID"
-              required
-            />
-            <label for="secondary_email">ALTERNATE MAIL ID<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6 pujaTypeFiled">
-            <label class="pujatype list">PUJA TYPE<span>*</span></label>
-            <p>
-              <label>
-                <input
-                  name="puja_type"
-                  type="radio"
-                  value="Housing-Complex"
-                  required
-                />
-                <span>Housing Complex </span>
-              </label>
-              <label>
-                <input name="puja_type" type="radio" value="Theme-based" />
-                <span>Barowari</span>
-              </label>
+            <!-- Subtext -->
+            <p class="text-lg md:text-xl text-gray-400 mb-8">
+                The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
             </p>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Theme_Name"
-              class="uppercase"
-              id="theme_name"
-              type="text"
-              placeholder="Enter Your Puja Theme Name"
-              required
-              pattern="[A-Za-z\s]+"
-            />
-            <label for="theme_name">THEME NAME<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Theme_Name_Bengali"
-              id="theme_name_bengali"
-              type="text"
-              placeholder="পুজোর থিমের নাম বাংলাতে লিখুন / অথবা 'NA' টাইপ করুন"
-              required
-            />
-            <label for="theme_name_bengali"
-              >পুজোর থিমের নাম<span>*</span></label
-            >
-          </div>
-        </div>
+            <!-- Call to Action Button -->
+            <a href="https://webrefactor.com" target="_blank" rel="noopener noreferrer" class="inline-block bg-indigo-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:bg-indigo-700 transition-transform transform hover:scale-105">
+                Visit WebRefactor.com
+            </a>
 
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Theme_Details"
-              class="uppercase"
-              id="theme_details"
-              type="text"
-              placeholder="Describe Your Puja Theme Details In Short / Type NA to skip"
-            />
-            <label for="theme_details">THEME DETAILS (ENGLISH)</label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Theme_Details_Bengali"
-              id="theme_details_bengali"
-              type="text"
-              placeholder="পুজোর থিমের বিষয় বাংলাতে সংক্ষেপে বর্ণনা করুন / অথবা 'NA' টাইপ করুন"
-            />
-            <label for="theme_details_bengali">পুজোর থিমের বিষয়</label>
-          </div>
-        </div>
+            <!-- Footer -->
+            <footer class="mt-16 text-gray-500 text-sm">
+                <p>&copy; 2024 WebRefactor. All rights reserved.</p>
+            </footer>
 
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Budget"
-              id="budget"
-              type="text"
-              placeholder="Mention Your Puja Budget Of This Year"
-              required
-            />
-            <label for="budget">BUDGET<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Material_Used"
-              id="materials_used"
-              type="text"
-              placeholder="Write Names Of Materials Separate By Commas."
-              required
-            />
-            <label for="materials_used"
-              >MATERIALS USED IN PUJA MANDOOP<span>*</span></label
-            >
-          </div>
         </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Khuti_Puja_Date"
-              id="khuti_puja_date"
-              type="date"
-              required
-            />
-            <label for="khuti_puja_date">KHUTI PUJA DATE<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Opening_Ceremony_Date"
-              id="opening_ceremony_date"
-              type="date"
-              required
-            />
-            <label for="opening_ceremony_date"
-              >OPENING CEREMONY DATE<span>*</span></label
-            >
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="President_Name"
-              class="uppercase"
-              id="presidents_name"
-              type="text"
-              placeholder="Enter Your President's Name"
-              required
-            />
-            <label for="presidents_name">PRESIDENT NAME<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="President_Phone_Number"
-              id="presidents_phone"
-              type="tel"
-              placeholder="Enter Your President's Phone Number"
-              required
-              pattern="\d{10}"
-            />
-            <label for="presidents_phone"
-              >PRESIDENT PHONE NO<span>*</span></label
-            >
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Secretaryary_Name"
-              class="uppercase"
-              id="secretary_name"
-              type="text"
-              placeholder="Enter Your Secretary's Name"
-              required
-            />
-            <label for="secretary_name">SECRETARY NAME<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Secretaryary_Phone_Number"
-              id="secretary_phone"
-              type="tel"
-              placeholder="Enter Your Secretary's Phone Number"
-              required
-              pattern="\d{10}"
-            />
-            <label for="secretary_phone"
-              >SECRETARY PHONE NO<span>*</span></label
-            >
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="First_Contact_Name"
-              class="uppercase"
-              id="contact_name_1"
-              type="text"
-              placeholder="Enter Your First Contact Name"
-              required
-              pattern="[A-Za-z\s]+"
-            />
-            <label for="contact_name_1">FIRST CONTACT NAME<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="First_Contact_Phone_Number"
-              id="contact_phone_1"
-              type="tel"
-              placeholder="Enter Your First Contact Phone Number"
-              required
-              pattern="\d{10}"
-            />
-            <label for="contact_phone_1"
-              >FIRST CONTACT PHONE NO<span>*</span></label
-            >
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Second_Contact_Name"
-              class="uppercase"
-              id="contact_name_2"
-              type="text"
-              placeholder="Enter Your Second Contact Name"
-              required
-              pattern="[A-Za-z\s]+"
-            />
-            <label for="contact_name_2"
-              >SECOND CONTACT NAME<span>*</span></label
-            >
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Second_Contact_Phone_Number"
-              id="contact_phone_2"
-              type="tel"
-              placeholder="Enter Your Second Contact Phone Number"
-              required
-              pattern="\d{10}"
-            />
-            <label for="contact_phone_2"
-              >SECOND CONTACT PHONE NO<span>*</span></label
-            >
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Third_Contact_Name"
-              class="uppercase"
-              id="contact_name_3"
-              type="text"
-              placeholder="Enter Your Third Contact Name"
-              required
-              pattern="[A-Za-z\s]+"
-            />
-            <label for="contact_name_3">THIRD CONTACT NAME<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Third_Contact_Phone_Number"
-              id="contact_phone_3"
-              type="tel"
-              placeholder="Enter Your Third Contact Phone Number"
-              required
-              pattern="\d{10}"
-            />
-            <label for="contact_phone_3"
-              >THIRD CONTACT PHONE NO<span>*</span></label
-            >
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Theme_Artists_Name"
-              class="uppercase"
-              id="theme_artists_name"
-              type="text"
-              placeholder="Enter Your Theme Artist's Name"
-              required
-            />
-            <label for="theme_artists_name"
-              >THEME ARTIST NAME<span>*</span></label
-            >
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Theme_Artists_Phone_Number"
-              id="theme_artists_phone"
-              type="tel"
-              placeholder="Enter Your Theme Artist's Phone Number"
-              required
-            />
-            <label for="theme_artists_phone"
-              >THEME ARTIST PHONE NO<span>*</span></label
-            >
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Light_Artists_Name"
-              class="uppercase"
-              id="light_artists_name"
-              type="text"
-              placeholder="Enter Your Light Artist's Name"
-              required
-            />
-            <label for="light_artists_name"
-              >LIGHT ARTIST NAME<span>*</span></label
-            >
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Light_Artists_Phone_Number"
-              id="light_artists_phone"
-              type="tel"
-              placeholder="Enter Your Light Artist's Phone Number"
-              required
-            />
-            <label for="light_artists_phone"
-              >LIGHT ARTIST PHONE NO<span>*</span></label
-            >
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Idol_Artists_Name"
-              class="uppercase"
-              id="idol_artists_name"
-              type="text"
-              placeholder="Enter Your Idol Artist's Name"
-              required
-            />
-            <label for="idol_artists_name"
-              >IDOL ARTIST NAME<span>*</span></label
-            >
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Idol_Artists_Phone_Number"
-              id="idol_artists_phone"
-              type="tel"
-              placeholder="Enter Your Idol Artist's Phone Number"
-              required
-            />
-            <label for="idol_artists_phone"
-              >IDOL ARTIST PHONE NO<span>*</span></label
-            >
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Music_Artists_Name"
-              class="uppercase"
-              id="music_artists_name"
-              type="text"
-              placeholder="Enter Your Music Artist's Name"
-              required
-            />
-            <label for="music_artists_name"
-              >MUSIC ARTIST NAME<span>*</span></label
-            >
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Music_Artists_Phone_Number"
-              id="music_artists_phone"
-              type="tel"
-              placeholder="Enter Your Music Artist's Phone Number"
-              required
-            />
-            <label for="music_artists_phone"
-              >MUSIC ARTIST PHONE NO<span>*</span></label
-            >
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Decorator_Name"
-              class="uppercase"
-              id="decorator_name"
-              type="text"
-              placeholder="Enter Your Decorator's Name"
-              required
-            />
-            <label for="decorator_name">DECORATOR NAME<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Decorator_Phone_Number"
-              id="decorator_phone"
-              type="tel"
-              placeholder="Enter Your Decorator's Phone Number"
-              required
-            />
-            <label for="decorator_phone"
-              >DECORATOR PHONE NO<span>*</span></label
-            >
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Registration_Number"
-              id="registration_no"
-              type="text"
-              placeholder="Enter Your Registration Number"
-              required
-            />
-            <label for="registration_no">REGISTRATION NO<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Social_Work"
-              class="uppercase"
-              id="social_work"
-              type="text"
-              placeholder="Enter Your Past Year's Social Works / 'NA' For None"
-              required
-            />
-            <label for="social_work">SOCIAL WORK<span>*</span></label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Electric_Consumption_2021"
-              id="electric_consumption_2021"
-              type="text"
-              placeholder="Enter Your Electric Consumption of Year 2021 in KW"
-              required
-            />
-            <label for="electric_consumption_2021"
-              >ELECTRICITY CONSUMPTION YEAR 2021<span>*</span></label
-            >
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Electric_Consumption_2022"
-              id="electric_consumption_2022"
-              type="text"
-              placeholder="Enter Your Electric Consumption of Year 2022 in KW"
-              required
-            />
-            <label for="electric_consumption_2022"
-              >ELECTRICITY CONSUMPTION YEAR 2022<span>*</span></label
-            >
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Electric_Consumption_2023"
-              id="electric_consumption_2023"
-              type="text"
-              placeholder="Enter Your Electric Consumption of Year 2023 in KW"
-              required
-            />
-            <label for="electric_consumption_2023"
-              >ELECTRICITY CONSUMPTION YEAR 2023<span>*</span></label
-            >
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Last_3_Years_Budget"
-              id="last_3_years_budget"
-              type="text"
-              placeholder="Enter Your Last 3 Years Puja Budget in Approx Separated By Commas."
-              required
-            />
-            <label for="last_3_years_budget"
-              >LAST 3 YEARS BUDGET (Approx.)<span>*</span></label
-            >
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Last_Year_Prize_Name"
-              id="last_year_prize_name"
-              type="text"
-              placeholder="Enter Prize Name Separated By Commas / 'NA' For None"
-              required
-            />
-            <label for="last_year_prize_name"
-              >LAST YEAR PRIZE NAME (2023)<span>*</span></label
-            >
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Asian_Paints_Winning_Year"
-              id="asian_paints_winning_year"
-              type="text"
-              placeholder="Enter Asian Paints Winning Year / 'NA' For None"
-              required
-            />
-            <label for="asian_paints_winning_year"
-              >ASIAN PAINTS WINNING YEAR<span>*</span></label
-            >
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Theme_Name_2021"
-              class="uppercase"
-              id="theme_name_one"
-              type="text"
-              placeholder="Enter The Theme Name For Year 2021 / 'NA' For None"
-              required
-            />
-            <label for="theme_name_one">THEME NAME (2021)<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Theme_Name_2022"
-              class="uppercase"
-              id="theme_name_two"
-              type="text"
-              placeholder="Enter The Theme Name For Year 2022 / 'NA' For None"
-              required
-            />
-            <label for="theme_name_two">THEME NAME (2022)<span>*</span></label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Theme_Name_2023"
-              class="uppercase"
-              id="theme_name_three"
-              type="text"
-              placeholder="Enter The Theme Name For Year 2023 / 'NA' For None"
-              required
-            />
-            <label for="theme_name_three"
-              >THEME NAME (2023)<span>*</span></label
-            >
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Club_Bank_Name"
-              class="uppercase"
-              id="club_bank_details"
-              type="text"
-              placeholder="Enter Your Club's Bank Account Name."
-              required
-            />
-            <label for="club_bank_details"
-              >CLUB BANK DETAILS (BANK NAME)<span>*</span></label
-            >
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Account_No"
-              id="account_no"
-              type="text"
-              placeholder="Enter Your Club's Bank Account Number."
-              required
-            />
-            <label for="account_no">ACCOUNT NO.<span>*</span></label>
-          </div>
-
-          <div class="input-field col s12 m6">
-            <input
-              name="Branch_Name"
-              class="uppercase"
-              id="branch_name"
-              type="text"
-              placeholder="Enter Your Club's Bank Branch Name."
-              required
-            />
-            <label for="branch_name">BRANCH NAME<span>*</span></label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12 m6">
-            <input
-              name="Ifsc_Code_No"
-              id="ifsc_code_no"
-              type="text"
-              placeholder="Enter Your Club's Bank IFSC Code Number."
-              required
-            />
-            <label for="ifsc_code_no">IFSC CODE NO.<span>*</span></label>
-          </div>
-          <div class="input-field col s12 m6">
-            <input
-              name="Pan_Card_No"
-              id="pan_card_no"
-              type="text"
-              placeholder="Enter PAN Card No."
-              required
-            />
-            <label for="pan_card_no">PAN CARD NO.<span>*</span></label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12 m6">
-            <ul>
-              <li style="color: red">
-                Note: <span>*</span> Hard Copy Of All Documents Required With
-                Number Of Xerox As Mentioned.
-              </li>
-              <li>1. Application letter - 40 pc</li>
-              <li>2. Theme Paper - 40 pc</li>
-              <li>3. Social Activities- 40 pc</li>
-              <li>4. Road Map - 40 pc</li>
-              <li>5. Club Stamp 2 pc</li>
-              <li>6. Letterhead - 20 pc</li>
-              <li>
-                7. Idol Photo (2023) - 10 pc & Pandal Photo (2023) - 10 pc
-              </li>
-              <li>8. Bank Details - Cancelled Cheque / Passbook - 10 pc</li>
-              <li>9. Puja Permission 2023 - 10 pc</li>
-              <li>10. Envelops - 20 pc</li>
-              <li>11. PAN Card - 10 pc</li>
-              <li>12. VIP Entry Pass - 200 pc</li>
-            </ul>
-          </div>
-          <div class="col s12 m6">
-            <ul>
-              <li style="color: red">
-                Note: <span>*</span> Soft Copy Of All Documents Required To be
-                Mailed @
-                <a
-                  href="mailto:jagency2022@gmail.com?subject=Registration Soft Copy"
-                  target="_blank"
-                  >jagency2022@gmail.com</a
-                >
-                Or WhatsApp Us @
-                <a
-                  href="https://wa.me/+919432120243?text=Registration Soft Copy"
-                  target="_blank"
-                  >9432120243</a
-                >.
-              </li>
-              <li>1. Application letter</li>
-              <li>2. Theme Paper ( English & Bengali)</li>
-              <li>3. Social Activities</li>
-              <li>4. Road Map</li>
-              <li>5. Idol Photo & Pandal Photo (2023)</li>
-              <li>6. Bank Details - Cancelled Cheque / Passbook</li>
-              <li>7. PAN Card</li>
-              <li>8. Theme Video 2023</li>
-              <li>
-                9. Budget Declaration: Attach a budget declaration on the
-                official Puja Committee letterhead, signed and stamped by the
-                Treasurer.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <button
-          class="btn waves-effect waves-light"
-          name="submit"
-          type="submit"
-        >
-          Submit
-        </button>
-      </form>
     </div>
-    <!-- <div class="banner">
-      <img src="./img/poster1.jpg" alt="Banner Image" />
-    </div> -->
-    <!-- footer -->
-    <footer>
-      <div class="footer-container">
-        <div class="footer-content">
-          <p>
-            &copy; <span id="currentYear"></span> J Agency. All rights reserved.
-          </p>
-          <p class="author">
-            Site Designed and Maintained by:
-            <a href="https://www.linkedin.com/in/surojit-manna/" target="_blank"
-              >Surojit Manna</a
-            >
-          </p>
-        </div>
-      </div>
-    </footer>
-    <!-- Materialize JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- Custom JS -->
-    <script src="app.js"></script>
-  </body>
+
+    <script>
+        // --- JavaScript Particle Animation ---
+
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas to full screen
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray;
+
+        // Mouse position - initially undefined
+        let mouse = {
+            x: null,
+            y: null,
+            radius: (canvas.height / 80) * (canvas.width / 80)
+        };
+
+        window.addEventListener('mousemove', 
+            function(event) {
+                mouse.x = event.x;
+                mouse.y = event.y;
+            }
+        );
+
+        // Particle class
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
+                this.x = x;
+                this.y = y;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
+                this.color = color;
+            }
+
+            // Method to draw individual particle
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+                ctx.fillStyle = 'rgba(139, 92, 246, 0.5)'; // Indigo color with transparency
+                ctx.fill();
+            }
+
+            // Check particle position, check mouse position, move the particle, draw the particle
+            update() {
+                // Check if particle is still within canvas
+                if (this.x > canvas.width || this.x < 0) {
+                    this.directionX = -this.directionX;
+                }
+                if (this.y > canvas.height || this.y < 0) {
+                    this.directionY = -this.directionY;
+                }
+
+                // Move particle
+                this.x += this.directionX;
+                this.y += this.directionY;
+                
+                // Draw particle
+                this.draw();
+            }
+        }
+
+        // Create particle array
+        function init() {
+            particlesArray = [];
+            let numberOfParticles = (canvas.height * canvas.width) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 0.4) - 0.2;
+                let directionY = (Math.random() * 0.4) - 0.2;
+                let color = 'rgba(139, 92, 246, 0.5)';
+
+                particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
+            }
+        }
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, innerWidth, innerHeight);
+
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+            }
+            connect();
+        }
+
+        // Function to draw lines between particles
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                        + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    
+                    if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                        opacityValue = 1 - (distance / 20000);
+                        ctx.strokeStyle = `rgba(139, 92, 246, ${opacityValue})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        // Resize event
+        window.addEventListener('resize', 
+            function() {
+                canvas.width = innerWidth;
+                canvas.height = innerHeight;
+                mouse.radius = ((canvas.height / 80) * (canvas.height / 80));
+                init();
+            }
+        );
+
+        // Mouse out event
+        window.addEventListener('mouseout',
+            function() {
+                mouse.x = undefined;
+                mouse.y = undefined;
+            }
+        );
+
+        init();
+        animate();
+    </script>
+</body>
 </html>
